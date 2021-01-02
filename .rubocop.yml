@@ -1,0 +1,58 @@
+require: rubocop-rake
+
+AllCops:
+  TargetRubyVersion: 2.6
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'test/**/*_test.rb'
+    - '*.md'
+    - 'bin/**'
+
+Metrics/BlockLength:
+  Max: 36
+  Exclude:
+    - sortiri.gemspec
+
+Metrics/BlockNesting:
+  Max: 2
+
+Layout/LineLength:
+  AllowURI: true
+  Enabled: false
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 15
+
+Metrics/ModuleLength:
+  Max: 120
+
+Metrics/ClassLength:
+  Max: 120
+
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: true
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    collect:  'map'
+    collect!: 'map!'
+    inject:   'reduce'
+    find:     'detect'
+    find_all: 'select'
+    delete:   'gsub'
+
+Style/Documentation:
+  Enabled: false
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Naming/FileName:
+  Enabled: false
+
+Layout/AccessModifierIndentation:
+  Enabled: false
